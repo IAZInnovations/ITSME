@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ITS ME | Personal Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    
+    <!-- AOS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden font-sans">
+    
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-gray-900/80 backdrop-blur-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-400">ITS ME</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#hero" class="hover:text-blue-400 transition-colors">Home</a>
+                <a href="#journey" class="hover:text-blue-400 transition-colors">Journey</a>
+                <a href="#superpowers" class="hover:text-blue-400 transition-colors">Superpowers</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#mental-control" class="hover:text-blue-400 transition-colors">Mental Age</a>
+                <a href="#philosophy" class="hover:text-blue-400 transition-colors">Philosophy</a>
+                <a href="#gallery" class="hover:text-blue-400 transition-colors">Gallery</a>
+                <a href="#manifesto" class="hover:text-blue-400 transition-colors">MY MINDSET</a>
+            </div>
+            <button class="md:hidden text-white focus:outline-none" id="menu-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-gray-800/95 backdrop-blur-md w-full absolute" id="mobile-menu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#hero" class="hover:text-blue-400 transition-colors py-2">Home</a>
+                <a href="#journey" class="hover:text-blue-400 transition-colors py-2">Journey</a>
+                <a href="#superpowers" class="hover:text-blue-400 transition-colors py-2">Superpowers</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors py-2">Skills</a>
+                <a href="#mental-control" class="hover:text-blue-400 transition-colors py-2">Mental Age</a>
+                <a href="#philosophy" class="hover:text-blue-400 transition-colors py-2">Philosophy</a>
+                <a href="#gallery" class="hover:text-blue-400 transition-colors py-2">Gallery</a>
+                <a href="#manifesto" class="hover:text-blue-400 transition-colors py-2">MY MINDSET</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div id="particles-js" class="absolute inset-0 z-0"></div>
+        <div class="container mx-auto px-4 z-10 text-center" data-aos="fade-up">
+            <h1 class="text-6xl md:text-8xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">ITS ME</h1>
+            <p class="text-xl md:text-3xl mb-8 text-gray-300">The Journey of Mastery, Power, and Mind.</p>
+            <div class="space-y-4 mb-8">
+                <p class="text-xl md:text-2xl">Mental age 39</p>
+                <p class="text-xl md:text-2xl">Developer (web, game, app)</p>
+                <p class="text-xl md:text-2xl">Boxer, Deep Thinker, Problem Solver</p>
+                <p class="text-xl md:text-2xl">Master of Self-Control and Energy Manipulation</p>
+            </div>
+            <p class="text-2xl md:text-4xl font-bold italic text-blue-400 mt-12 max-w-3xl mx-auto">
+                "If I said I WILL — then I WILL — no matter what it takes."
+            </p>
+            <div class="mt-12">
+                <a href="#journey" class="animate-bounce inline-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Life Journey Timeline - Fixed structure -->
+    <section id="journey" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center" data-aos="fade-up">My Life Journey</h2>
+            
+            <div class="relative timeline-container">
+                <!-- Timeline line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-500 timeline-line"></div>
+                
+                <!-- Year 2013 - Beginning -->
+                <div class="relative mb-24 timeline-item" data-aos="fade-up">
+                    <div class="timeline-point-container">
+                        <div class="timeline-point" style="background: linear-gradient(to right, #3b82f6, #60a5fa);">
+                            <span>1</span>
+                        </div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="text-3xl font-bold text-blue-400 mb-2">2013: First Year of School</h3>
+                        <p class="text-xl text-gray-300">The Beginning</p>
+                        <p class="mt-4 text-gray-400">The foundation years. First exposure to structured learning and early signs of unique thought processes.</p>
+                    </div>
+                </div>
+                
+                <!-- Version 1 -->
+                <div class="relative mb-24 timeline-item" data-aos="fade-up">
+                    <div class="timeline-point-container">
+                        <div class="timeline-point" style="background: linear-gradient(to right, #3b82f6, #60a5fa);">
+                            <span>2</span>
+                        </div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="text-3xl font-bold text-blue-400 mb-2">Version 1.0</h3>
+                        <p class="text-xl text-gray-300">Self-Discovery Phase</p>
+                        <p class="mt-4 text-gray-400">The evolution period. First hints of exceptional mental capabilities and developing early skills that would later shape my journey.</p>
+                    </div>
+                </div>
+                
+                <!-- Version 2-3 -->
+                <div class="relative mb-24 timeline-item" data-aos="fade-up">
+                    <div class="timeline-point-container">
+                        <div class="timeline-point" style="background: linear-gradient(to right, #3b82f6, #60a5fa);">
+                            <span>3</span>
+                        </div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="text-3xl font-bold text-blue-400 mb-2">Version 2.0 - 3.0</h3>
+                        <p class="text-xl text-gray-300">Growth & Transformation</p>
+                        <p class="mt-4 text-gray-400">The transformation phase. Beginning to harness latent abilities and experiencing the first mental breakthroughs that separated me from conventional thinking.</p>
+                    </div>
+                </div>
+                
+                <!-- Version 4 - Age 14 -->
+                <div class="relative timeline-item" data-aos="fade-up">
+                    <div class="timeline-point-container">
+                        <div class="timeline-point" style="background: linear-gradient(to right, #3b82f6, #8b5cf6);">
+                            <span>4</span>
+                        </div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-2">Version 4.0 - Age 14</h3>
+                        <p class="text-xl text-gray-300">The Awakening</p>
+                        <p class="mt-4 text-gray-400">The pinnacle transformation. Insane self-realizations, fighting life challenges, and entering the polymath stage with full awareness of my exceptional capabilities and mental power.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Superpowers Section -->
+    <section id="superpowers" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center" data-aos="fade-up">Superpowers</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Superpower 1 -->
+                <div class="bg-gray-800 rounded-lg p-6 hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/20 superpower-card" data-aos="fade-up">
+                    <div class="mb-4 text-3xl text-blue-400">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Empathy</h3>
+                    <p class="text-gray-400">Ability to feel pain and emotions of others with extraordinary precision.</p>
+                </div>
+                
+                <!-- Superpower 2 -->
+                <div class="bg-gray-800 rounded-lg p-6 hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/20 superpower-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mb-4 text-3xl text-blue-400">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Deep Connection</h3>
+                    <p class="text-gray-400">Deep empathic connections with friends and family, sensing emotions across distance.</p>
+                </div>
+                
+                <!-- Superpower 3 -->
+                <div class="bg-gray-800 rounded-lg p-6 hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/20 superpower-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mb-4 text-3xl text-blue-400">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Extreme Situational Handling</h3>
+                    <p class="text-gray-400">Exceptional composure and clarity during intense critical situations.</p>
+                </div>
+                
+                <!-- Superpower 4 -->
+                <div class="bg-gray-800 rounded-lg p-6 hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/20 superpower-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mb-4 text-3xl text-blue-400">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Predictive Thinking</h3>
+                    <p class="text-gray-400">Reading moves and anticipating others' actions and thoughts before they are expressed.</p>
+                </div>
+                
+                <!-- Superpower 5 -->
+                <div class="bg-gray-800 rounded-lg p-6 hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/20 superpower-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="mb-4 text-3xl text-blue-400">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Mind-Over-Body</h3>
+                    <p class="text-gray-400">Changing physical reactions through concentrated thought and controlling reality (e.g., influencing sunlight).</p>
+                </div>
+                
+                <!-- Superpower 6 -->
+                <div class="bg-gray-800 rounded-lg p-6 hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/20 superpower-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="mb-4 text-3xl text-blue-400">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Energy Absorption</h3>
+                    <p class="text-gray-400">Ability to absorb and channel energy from trees, objects, and the environment.</p>
+                </div>
+                
+                <!-- Superpower 7 -->
+                <div class="bg-gray-800 rounded-lg p-6 hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/20 superpower-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="mb-4 text-3xl text-blue-400">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Rapid Self-Healing</h3>
+                    <p class="text-gray-400">Accelerated healing capacity by focusing energy and recovery from physical and mental stressors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section id="skills" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center" data-aos="fade-up">My Skill Levels</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- Advanced Skills Group -->
+                <div class="mb-10">
+                    <h3 class="text-2xl font-bold mb-6 text-blue-400">Advanced</h3>
+                    
+                    <!-- Skill 1 -->
+                    <div class="mb-8" data-aos="fade-up">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-xl font-medium">Coding / Web / Game / App Development</span>
+                            <span class="text-blue-400">Advanced</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-4">
+                            <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-4 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill 5 -->
+                    <div class="mb-8" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-xl font-medium">Self-Control, Deep Work, Ignoring Distractions</span>
+                            <span class="text-blue-400">Advanced</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-4">
+                            <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-4 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Business Skill -->
+                    <div class="mb-8" data-aos="fade-up" data-aos-delay="150">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-xl font-medium">Business Knowledge</span>
+                            <span class="text-blue-400">Advanced</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-4">
+                            <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-4 rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Deep Thinking -->
+                    <div class="mb-8" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-xl font-medium">Deep Thinking & Problem Solving</span>
+                            <span class="text-blue-400">Advanced</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-4">
+                            <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-4 rounded-full" style="width: 94%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Moderate Skills Group -->
+                <div class="mb-10">
+                    <h3 class="text-2xl font-bold mb-6 text-blue-400">Moderate</h3>
+                    
+                    <!-- Skill 3 -->
+                    <div class="mb-8" data-aos="fade-up" data-aos-delay="250">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-xl font-medium">Electrical & Hardware Creations</span>
+                            <span class="text-blue-400">Moderate</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-4">
+                            <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-4 rounded-full" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Basic Skills Group -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-400">Basic</h3>
+                    
+                    <!-- Skill 2 -->
+                    <div class="mb-8" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-xl font-medium">Boxing & Physical Fitness</span>
+                            <span class="text-blue-400">Basic</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-4">
+                            <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-4 rounded-full" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Mental Age & Control Section -->
+    <section id="mental-control" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center" data-aos="fade-up">My Mental Age & Control</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-gray-800 rounded-lg p-8 shadow-lg" data-aos="fade-right">
+                    <h3 class="text-3xl font-bold text-blue-400 mb-6">Mental Age: 39</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        Despite my physical youth, my mental age is that of an experienced adult. This advanced mental maturity provides me with perspective and wisdom beyond my years, allowing me to approach challenges with a level of clarity and foresight uncommon among my peers.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-800 rounded-lg p-8 shadow-lg" data-aos="fade-left">
+                    <h3 class="text-3xl font-bold text-blue-400 mb-6">Complete Self-Mastery</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        I've developed full mastery over my eyes, hands, mind, and emotions. This exceptional discipline allows me to maintain focus and avoid common distractions that manipulate moods, such as certain music or entertainment that others find irresistible.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-gray-800 rounded-lg p-8 shadow-lg" data-aos="fade-up">
+                <h3 class="text-3xl font-bold text-blue-400 mb-6 text-center">Disciplined Focus</h3>
+                <p class="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto">
+                    My ability to ignore distractions and maintain deep work states is not merely a skill but a defining feature of my existence. While others are pulled by the constant streams of stimulation, I can channel my energy with precision, working toward my goals with unwavering determination and clarity of purpose.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center" data-aos="fade-up">Philosophy</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Quote 1 -->
+                <div class="text-center p-8 bg-gray-800 rounded-lg shadow-lg" data-aos="fade-up">
+                    <blockquote class="text-2xl italic font-medium text-blue-400 mb-4">
+                        "The truth doesn't change. People change beliefs in it."
+                    </blockquote>
+                </div>
+                
+                <!-- Quote 2 -->
+                <div class="text-center p-8 bg-gray-800 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <blockquote class="text-2xl italic font-medium text-blue-400 mb-4">
+                        "You are the only one who is like you. No one was like you. No one will be like you."
+                    </blockquote>
+                </div>
+                
+                <!-- Quote 3 -->
+                <div class="text-center p-8 bg-gray-800 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <blockquote class="text-2xl italic font-medium text-blue-400 mb-4">
+                        "Don't let them see what you aren't. Show them what you are."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center" data-aos="fade-up">Gallery</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gallery-grid">
+                <!-- Images from my images folder -->
+                <div class="gallery-item rounded overflow-hidden shadow-lg" data-aos="fade-up">
+                    <img src="./my images/photo_5_2025-03-23_21-43-13.jpg" alt="Family Photo" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item rounded overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="50">
+                    <img src="./my images/photo_6_2025-03-23_21-43-13.jpg" alt="Photo 6" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item rounded overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <img src="./my images/photo_7_2025-03-23_21-43-13.jpg" alt="Father and Child Photo" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item rounded overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="150">
+                    <img src="./my images/photo_8_2025-03-23_21-43-13.jpg" alt="Photo 8" class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto Section -->
+    <section id="manifesto" class="py-20 bg-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0 z-0" id="energy-aura"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center" data-aos="fade-up">MY MINDSET</h2>
+            
+            <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                <p class="text-3xl md:text-5xl font-bold italic text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 leading-tight mantra-glow">
+                    "If I say 'I WILL' — then I WILL — no matter what it takes."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-800 text-center">
+        <div class="container mx-auto px-4">
+            <p class="text-gray-400">© <span id="current-year"></span> ITS ME. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Particles.js for background effects -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="./script.js"></script>
+</body>
+</html> 
